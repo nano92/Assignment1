@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Jan 14 13:57:16 2016
+Quartus Prime Version : 15.1.0 Build 185 10/21/2015 SJ Lite Edition
+Revision Name : Hill_Cipher_A1
+Top-level Entity Name : key_inverter
+Family : Cyclone IV E
+Total logic elements : 502
+    Total combinational functions : 428
+    Dedicated logic registers : 152
+Total registers : 152
+Total pins : 73
+Total virtual pins : 0
+Total memory bits : 64
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

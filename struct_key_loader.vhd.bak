@@ -1,0 +1,89 @@
+library lpm;
+library ieee;
+use ieee.std_logic_1164.all;
+use lpm.lpm_components.all;
+
+entity struct_key_loader is
+
+port(	p1,p2,p3   : in std_logic_vector(3 downto 0);
+		clk 		 	: in std_logic;
+		load_key    : in std_logic;
+
+		k11,k12,k13,
+		k21,k22,k23,
+		k31,k32,k33 : out std_logic_vector(3 downto 0));
+
+end struct_key_loader;
+
+architecture behavior of struct_key_loader is
+
+signal k1_in,k2_in,k3_in : std_logic_vector(3 downto 0);
+
+
+		 
+begin
+
+k11_FF : LPM_FF
+
+GENERIC MAP (
+lpm_width => 4,
+)
+PORT MAP (data => k1_in, clock => clk, enable => load_key, q => k11); 
+
+k21_FF : LPM_FF
+
+GENERIC MAP (
+lpm_width => 4,
+)
+PORT MAP (data => k2_in, clock => clk, enable => load_key, q => k21); 
+
+k31_FF : LPM_FF
+
+GENERIC MAP (
+lpm_width => 4,
+)
+PORT MAP (data => k3_in, clock => clk, enable => load_key, q => k31); 
+
+k12_FF : LPM_FF
+
+GENERIC MAP (
+lpm_width => 4,
+)
+PORT MAP (data =>k11 , clock => clk, enable => load_key, q => k12); 
+
+k22_FF : LPM_FF
+
+GENERIC MAP (
+lpm_width => 4,
+)
+PORT MAP (data => k21, clock => clk, enable => load_key, q => k22); 
+
+k32_FF : LPM_FF
+
+GENERIC MAP (
+lpm_width => 4,
+)
+PORT MAP (data => k31, clock => clk, enable => load_key, q => k32); 
+
+k13_FF : LPM_FF
+
+GENERIC MAP (
+lpm_width => 4,
+)
+PORT MAP (data => k12, clock => clk, enable => load_key, q => k13); 
+
+k23_FF : LPM_FF
+
+GENERIC MAP (
+lpm_width => 4,
+)
+PORT MAP (data => k22, clock => clk, enable => load_key, q => k23); 
+
+k33_FF : LPM_FF
+
+GENERIC MAP (
+lpm_width => 4,
+)
+PORT MAP (data => k32, clock => clk, enable => load_key, q => k33); 
+
+end behavior;

@@ -1,0 +1,48 @@
+library altera_mf;
+LIBRARY lpm;
+library ieee;
+use ieee.std_logic_1164.all;
+use lpm.lpm_components.all;
+
+entity struct_matrix_multi is
+
+port(	p1,p2,p3,
+		k11,k12,k13,
+		k21,k22,k23,
+		k31,k32,k33: in std_logic_vector(3 downto 0);
+		
+		clk: 			 in std_logic;
+		c1,c2,c3:    out std_logic_vector(3 downto 0));
+
+end struct_matrix_multi;
+
+architecture behavior of struct_matrix_multi is
+signal temp_p1,temp_p2,temp_p3: std_logic_vector(3 downto 0);
+
+begin
+
+---------------FF module to add registers to inputs-------------------
+p1_FF : LPM_FF
+
+GENERIC MAP (
+lpm_width => 4
+)
+PORT MAP (data => p1, clock => clk, q => temp_p1); --MAYBE USE TEMP VALUES!
+
+p2_FF : LPM_FF
+
+GENERIC MAP (
+lpm_width => 4
+)
+PORT MAP (data => p2, clock => clk, q => temp_p2); --MAYBE USE TEMP VALUES!
+
+p3_FF : LPM_FF
+
+GENERIC MAP (
+lpm_width => 4
+)
+PORT MAP (data => p3, clock => clk, q => temp_p3); --MAYBE USE TEMP VALUES!
+
+
+
+end behavior;

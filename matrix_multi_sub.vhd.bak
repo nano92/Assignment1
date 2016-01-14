@@ -1,0 +1,367 @@
+library altera_mf;
+LIBRARY lpm;
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+use lpm.lpm_components.all;
+
+entity matrix_multi_sub is
+
+port(	p1,p2,p3,
+		k11,k12,k13,
+		k21,k22,k23,
+		k31,k32,k33: in std_logic_vector(3 downto 0);
+		
+		clk: 			 in std_logic;
+		c1,c2,c3:    out std_logic_vector(3 downto 0));
+
+end matrix_multi_sub;
+
+architecture behavior of matrix_multi_sub is
+
+signal temp_p1,temp_p2,temp_p3: std_logic_vector(3 downto 0);
+
+signal temp_mult1_c1,temp_mult2_c1,temp_mult3_c1: std_logic_vector(7 downto 0);-- temp output signal for lpm_mult for c1
+signal temp_add1_c1,temp_add2_c1: std_logic_vector(7 downto 0);-- temp output signal for lpm_add for c1
+
+signal temp_mult1_c2,temp_mult2_c2,temp_mult3_c2: std_logic_vector(7 downto 0);-- temp output signal for lpm_mult for c2
+signal temp_add1_c2,temp_add2_c2: std_logic_vector(7 downto 0);-- temp output signal for lpm_add for c2
+
+signal temp_mult1_c3,temp_mult2_c3,temp_mult3_c3: std_logic_vector(7 downto 0);-- temp output signal for lpm_mult for c3
+signal temp_add1_c3,temp_add2_c3: std_logic_vector(7 downto 0);-- temp output signal for lpm_add for c3
+
+signal temp_c1,temp_c2,temp_c3: std_logic_vector(7 downto 0); -- temp output signals
+
+signal temp_load: std_logic;
+
+begin
+
+temp_load <= '1';--synchronous load input
+
+---------------FF module to add registers to inputs-------------------
+p1_FF : LPM_FF
+
+GENERIC MAP (
+lpm_width => 4
+)
+PORT MAP (data => p1, clock => clk, sload => temp_load,  q => temp_p1); --MAYBE USE TEMP VALUES!
+
+
+
+---------------Multiplier sub module-----------------------
+C1_muilt1 : LPM_MULT
+
+ GENERIC MAP ( 
+ LPM_WIDTHA => 4, --width of dataA port
+ LPM_WIDTHB => 4, --width of dataB port
+ LPM_WIDTHS => 1,
+ LPM_WIDTHP => 8, --width of the result port
+ LPM_REPRESENTATION => "UNSIGNED",
+ LPM_PIPELINE => 0,
+ LPM_TYPE => "L_MULT",
+ LPM_HINT => "UNUSED"
+)
+
+port ( DATAA => temp_p1,
+		 DATAB => k11,
+	  	 CLOCK => clk,
+		 RESULT => temp_mult1_c1
+);
+
+C1_muilt2 : LPM_MULT
+
+ GENERIC MAP ( 
+ LPM_WIDTHA => 4, --width of dataA port
+ LPM_WIDTHB => 4, --width of dataB port
+ LPM_WIDTHS => 1,
+ LPM_WIDTHP => 8, --width of the result port
+ LPM_REPRESENTATION => "UNSIGNED",
+ LPM_PIPELINE => 0,
+ LPM_TYPE => "L_MULT",
+ LPM_HINT => "UNUSED"
+)
+
+port ( DATAA => temp_p2,
+		 DATAB => k21,
+	  	 CLOCK => clk,
+		 RESULT => temp_mult2_c1
+);
+
+C1_muilt3 : LPM_MULT
+
+ GENERIC MAP ( 
+ LPM_WIDTHA => 4, --width of dataA port
+ LPM_WIDTHB => 4, --width of dataB port
+ LPM_WIDTHS => 1,
+ LPM_WIDTHP => 8, --width of the result port
+ LPM_REPRESENTATION => "UNSIGNED",
+ LPM_PIPELINE => 0,
+ LPM_TYPE => "L_MULT",
+ LPM_HINT => "UNUSED"
+)
+
+port ( DATAA => temp_p3,
+		 DATAB => k31,
+	  	 CLOCK => clk,
+		 RESULT => temp_mult3_c1
+);
+
+----------------Add sub module-------------------------------
+c1_add1 : LPM_ADD_SUB
+ 
+ GENERIC MAP (
+LPM_WIDTH => 8, --multiplication of two 4-bit inputs gets 8-bit result
+LPM_DIRECTION => "UNUSED",
+LPM_REPRESENTATION => "SIGNED",
+LPM_PIPELINE => 0,
+LPM_TYPE => "L_ADD_SUB",
+LPM_HINT => "UNUSED"
+
+)
+
+port (DATAA => temp_mult1_c1,
+		DATAB => temp_mult2_c1,
+		RESULT => temp_add1_c1
+);
+
+c1_add2 : LPM_ADD_SUB
+ 
+ GENERIC MAP (
+LPM_WIDTH => 8, --multiplication of two 4-bit inputs gets 8-bit result
+LPM_DIRECTION => "UNUSED",
+LPM_REPRESENTATION => "SIGNED",
+LPM_PIPELINE => 0,
+LPM_TYPE => "L_ADD_SUB",
+LPM_HINT => "UNUSED"
+
+)
+
+port (DATAA => temp_add1_c1,
+		DATAB => temp_mult3_c1,
+		RESULT => temp_c1 
+);
+
+---------------- P2 --------------------------
+
+---------------FF module to add registers to inputs-------------------
+p2_FF : LPM_FF
+
+GENERIC MAP (
+lpm_width => 4
+)
+PORT MAP (data => p2, clock => clk, sload => temp_load, q => temp_p2); --MAYBE USE TEMP VALUES!
+
+---------------Multiplier sub module-----------------------
+C2_muilt1 : LPM_MULT
+
+ GENERIC MAP ( 
+ LPM_WIDTHA => 4, --width of dataA port
+ LPM_WIDTHB => 4, --width of dataB port
+ LPM_WIDTHS => 1,
+ LPM_WIDTHP => 8, --width of the result port
+ LPM_REPRESENTATION => "UNSIGNED",
+ LPM_PIPELINE => 0,
+ LPM_TYPE => "L_MULT",
+ LPM_HINT => "UNUSED"
+)
+
+port ( DATAA => temp_p2,
+		 DATAB => k12,
+	  	 CLOCK => clk,
+		 RESULT => temp_mult1_c2
+);
+
+C2_muilt2 : LPM_MULT
+
+ GENERIC MAP ( 
+ LPM_WIDTHA => 4, --width of dataA port
+ LPM_WIDTHB => 4, --width of dataB port
+ LPM_WIDTHS => 1,
+ LPM_WIDTHP => 8, --width of the result port
+ LPM_REPRESENTATION => "UNSIGNED",
+ LPM_PIPELINE => 0,
+ LPM_TYPE => "L_MULT",
+ LPM_HINT => "UNUSED"
+)
+
+port ( DATAA => temp_p2,
+		 DATAB => k21,
+	  	 CLOCK => clk,
+		 RESULT => temp_mult2_c2
+);
+
+C2_muilt3 : LPM_MULT
+
+ GENERIC MAP ( 
+ LPM_WIDTHA => 4, --width of dataA port
+ LPM_WIDTHB => 4, --width of dataB port
+ LPM_WIDTHS => 1,
+ LPM_WIDTHP => 8, --width of the result port
+ LPM_REPRESENTATION => "UNSIGNED",
+ LPM_PIPELINE => 0,
+ LPM_TYPE => "L_MULT",
+ LPM_HINT => "UNUSED"
+)
+
+port ( DATAA => temp_p3,
+		 DATAB => k31,
+	  	 CLOCK => clk,
+		 RESULT => temp_mult3_c2
+);
+
+----------------Add sub module-------------------------------
+c2_add1 : LPM_ADD_SUB
+ 
+ GENERIC MAP (
+LPM_WIDTH => 8, --multiplication of two 4-bit inputs gets 8-bit result
+LPM_DIRECTION => "UNUSED",
+LPM_REPRESENTATION => "SIGNED",
+LPM_PIPELINE => 0,
+LPM_TYPE => "L_ADD_SUB",
+LPM_HINT => "UNUSED"
+
+)
+
+port (DATAA => temp_mult1_c2,
+		DATAB => temp_mult2_c2,
+		RESULT => temp_add1_c2
+);
+
+c2_add2 : LPM_ADD_SUB
+ 
+ GENERIC MAP (
+LPM_WIDTH => 8, --multiplication of two 4-bit inputs gets 8-bit result
+LPM_DIRECTION => "UNUSED",
+LPM_REPRESENTATION => "SIGNED",
+LPM_PIPELINE => 0,
+LPM_TYPE => "L_ADD_SUB",
+LPM_HINT => "UNUSED"
+
+)
+
+port (DATAA => temp_add1_c2,
+		DATAB => temp_mult3_c2,
+		RESULT => temp_c2 
+);
+
+---------------------P3---------------------------------------
+
+---------------FF module to add registers to inputs-------------------
+p3_FF : LPM_FF
+
+GENERIC MAP (
+lpm_width => 4
+)
+PORT MAP (data => p3, clock => clk, sload => temp_load, q => temp_p3); --MAYBE USE TEMP VALUES!
+
+
+---------------Multiplier sub module-----------------------
+C3_muilt1 : LPM_MULT
+
+ GENERIC MAP ( 
+ LPM_WIDTHA => 4, --width of dataA port
+ LPM_WIDTHB => 4, --width of dataB port
+ LPM_WIDTHS => 1,
+ LPM_WIDTHP => 8, --width of the result port
+ LPM_REPRESENTATION => "UNSIGNED",
+ LPM_PIPELINE => 0,
+ LPM_TYPE => "L_MULT",
+ LPM_HINT => "UNUSED"
+)
+
+port ( DATAA => temp_p2,
+		 DATAB => k12,
+	  	 CLOCK => clk,
+		 RESULT => temp_mult1_c3
+);
+
+C3_muilt2 : LPM_MULT
+
+ GENERIC MAP ( 
+ LPM_WIDTHA => 4, --width of dataA port
+ LPM_WIDTHB => 4, --width of dataB port
+ LPM_WIDTHS => 1,
+ LPM_WIDTHP => 8, --width of the result port
+ LPM_REPRESENTATION => "UNSIGNED",
+ LPM_PIPELINE => 0,
+ LPM_TYPE => "L_MULT",
+ LPM_HINT => "UNUSED"
+)
+
+port ( DATAA => temp_p2,
+		 DATAB => k21,
+	  	 CLOCK => clk,
+		 RESULT => temp_mult2_c3
+);
+
+C3_muilt3 : LPM_MULT
+
+ GENERIC MAP ( 
+ LPM_WIDTHA => 4, --width of dataA port
+ LPM_WIDTHB => 4, --width of dataB port
+ LPM_WIDTHS => 1,
+ LPM_WIDTHP => 8, --width of the result port
+ LPM_REPRESENTATION => "UNSIGNED",
+ LPM_PIPELINE => 0,
+ LPM_TYPE => "L_MULT",
+ LPM_HINT => "UNUSED"
+)
+
+port ( DATAA => temp_p3,
+		 DATAB => k31,
+	  	 CLOCK => clk,
+		 RESULT => temp_mult3_c3
+);
+
+----------------Add sub module-------------------------------
+c3_add1 : LPM_ADD_SUB
+ 
+ GENERIC MAP (
+LPM_WIDTH => 8, --multiplication of two 4-bit inputs gets 8-bit result
+LPM_DIRECTION => "UNUSED",
+LPM_REPRESENTATION => "SIGNED",
+LPM_PIPELINE => 0,
+LPM_TYPE => "L_ADD_SUB",
+LPM_HINT => "UNUSED"
+
+)
+
+port (DATAA => temp_mult1_c3,
+		DATAB => temp_mult2_c3,
+		RESULT => temp_add1_c3
+);
+
+c3_add2 : LPM_ADD_SUB
+ 
+ GENERIC MAP (
+LPM_WIDTH => 8, --multiplication of two 4-bit inputs gets 8-bit result
+LPM_DIRECTION => "UNUSED",
+LPM_REPRESENTATION => "SIGNED",
+LPM_PIPELINE => 0,
+LPM_TYPE => "L_ADD_SUB",
+LPM_HINT => "UNUSED"
+
+)
+
+port (DATAA => temp_add1_c3,
+		DATAB => temp_mult3_c3,
+		RESULT => temp_c3 
+);
+
+
+------------Process block to write outputs--------------
+multiplier: process(clk) begin
+
+if (clk'EVENT AND clk = '1') then --rising edge
+	 
+	 c1 <= temp_c1(3 downto 0);
+	 c2 <= temp_c2(3 downto 0);
+	 c3 <= temp_c3(3 downto 0);
+
+end if;
+end process;
+
+
+
+end behavior

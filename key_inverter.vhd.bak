@@ -1,0 +1,13 @@
+library ieee;
+library lpm;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+use lpm.lpm_components.all;
+
+entity key_inverter is
+port(ek11,
+);
+
+
+end key_inverter;
