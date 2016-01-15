@@ -30,6 +30,14 @@ signal cof11,cof12,cof13,
 		 cof21,cof22,cof23,
 		 cof31,cof32,cof33: std_logic_vector(7 downto 0);
 
+signal mult1_cof11,mult1_cof12,mult1_cof13,
+		 mult1_cof21,mult1_cof22,mult1_cof23,
+		 mult1_cof31,mult1_cof32,mult1_cof33: std_logic_vector(7 downto 0);
+
+signal mult2_cof11,mult2_cof12,mult2_cof13,
+		 mult2_cof21,mult2_cof22,mult2_cof23,
+		 mult2_cof31,mult2_cof32,mult2_cof33: std_logic_vector(7 downto 0);
+
 signal temp_cof11,temp_cof12,temp_cof13,
 		 temp_cof21,temp_cof22,temp_cof23,
 		 temp_cof31,temp_cof32,temp_cof33: std_logic_vector(7 downto 0);
@@ -48,22 +56,42 @@ signal temp_dk11,temp_dk12,temp_dk13,
 		 temp_dk21,temp_dk22,temp_dk23,
 		 temp_dk31,temp_dk32,temp_dk33: std_logic_vector(7 downto 0);
 		 
-type STATE_TYPE is (s0,s1,s2,s3);
+--type STATE_TYPE is (s0,s1,s2,s3);
 
-signal state: STATE_TYPE;
+--signal state: STATE_TYPE;
 
 begin
 
 ------------------cofactors computation------------------
-temp_cof11 <= temp_ek22*temp_ek33 - temp_ek23*temp_ek32;
-temp_cof12 <= temp_ek23*temp_ek31 - temp_ek21*temp_ek33;
-temp_cof13 <= temp_ek21*temp_ek32 - temp_ek22*temp_ek31;
-temp_cof21 <= temp_ek13*temp_ek32 - temp_ek12*temp_ek33;
-temp_cof22 <= temp_ek11*temp_ek33 - temp_ek13*temp_ek31;
-temp_cof23 <= temp_ek12*temp_ek31 - temp_ek11*temp_ek32;
-temp_cof31 <= temp_ek12*temp_ek23 - temp_ek22*temp_ek13;
-temp_cof32 <= temp_ek13*temp_ek21 - temp_ek11*temp_ek23;
-temp_cof33 <= temp_ek11*temp_ek22 - temp_ek12*temp_ek21;
+mult1_cof11 <= temp_ek22*temp_ek33;
+mult1_cof12 <= temp_ek23*temp_ek31;
+mult1_cof13 <= temp_ek21*temp_ek32;
+mult1_cof21 <= temp_ek13*temp_ek32;
+mult1_cof22 <= temp_ek11*temp_ek33;
+mult1_cof23 <= temp_ek12*temp_ek31;
+mult1_cof31 <= temp_ek12*temp_ek23;
+mult1_cof32 <= temp_ek13*temp_ek21;
+mult1_cof33 <= temp_ek11*temp_ek22;
+
+mult2_cof11 <= temp_ek23*temp_ek32;
+mult2_cof12 <= temp_ek21*temp_ek33;
+mult2_cof13 <= temp_ek22*temp_ek31;
+mult2_cof21 <= temp_ek12*temp_ek33;
+mult2_cof22 <= temp_ek13*temp_ek31;
+mult2_cof23 <= temp_ek11*temp_ek32;
+mult2_cof31 <= temp_ek22*temp_ek13;
+mult2_cof32 <= temp_ek11*temp_ek23;
+mult2_cof33 <= temp_ek12*temp_ek21;
+
+temp_cof11 <= mult1_cof11 - mult2_cof11;
+temp_cof12 <= mult1_cof12 - mult2_cof12;
+temp_cof13 <= mult1_cof13 - mult2_cof13;
+temp_cof21 <= mult1_cof21 - mult2_cof21;
+temp_cof22 <= mult1_cof22 - mult2_cof22;
+temp_cof23 <= mult1_cof23 - mult2_cof23;
+temp_cof31 <= mult1_cof31 - mult2_cof31;
+temp_cof32 <= mult1_cof32 - mult2_cof32;
+temp_cof33 <= mult1_cof33 - mult2_cof33;
 
 ------------------determinant computation-----------------
 temp_det <= (temp_ek11*cof11(3 downto 0)) + (temp_ek12*cof12(3 downto 0)) + (temp_ek13*cof13(3 downto 0));
@@ -102,9 +130,9 @@ begin
 
 if (clk'EVENT AND clk = '1') then 
 
-	case state is
+	--case state is
 		
-		when s0=>
+		--when s0=>
 		
 		temp_ek11 <= ek11;
 		temp_ek12 <= ek12;
@@ -117,9 +145,9 @@ if (clk'EVENT AND clk = '1') then
 		temp_ek33 <= ek33;
 			
 		
-		state <= s1;
+		--state <= s1;
 		
-		when s1=>
+		--when s1=>
 		
 		cof11 <= temp_cof11;
 		cof12 <= temp_cof12;
@@ -131,9 +159,9 @@ if (clk'EVENT AND clk = '1') then
 		cof32 <= temp_cof32;
 		cof33 <= temp_cof33;
 		
-		state <= s2;
+		--state <= s2;
 		
-		when s2=>
+		--when s2=>
 				
 		adj11 <= cof11;
 		adj21 <= cof12;
@@ -148,9 +176,9 @@ if (clk'EVENT AND clk = '1') then
 		det <= temp_det;
 		
 		
-		state <= s3;
+		--state <= s3;
 		
-		when s3=>
+		--when s3=>
 		
 		dk11 <= temp_dk11(3 downto 0); 
 		dk12 <= temp_dk12(3 downto 0);
@@ -162,9 +190,9 @@ if (clk'EVENT AND clk = '1') then
 		dk32 <= temp_dk32(3 downto 0); 
 		dk33 <= temp_dk33(3 downto 0); 
 		
-		state <= s0;
+		--state <= s0;
 		
-	end case;
+	--end case;
 
 
 end if;
