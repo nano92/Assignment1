@@ -38,102 +38,25 @@ signal mult2_cof11,mult2_cof12,mult2_cof13,
 		 mult2_cof21,mult2_cof22,mult2_cof23,
 		 mult2_cof31,mult2_cof32,mult2_cof33: std_logic_vector(7 downto 0);
 
-signal temp_cof11,temp_cof12,temp_cof13,
-		 temp_cof21,temp_cof22,temp_cof23,
-		 temp_cof31,temp_cof32,temp_cof33: std_logic_vector(7 downto 0);
-
 signal adj11,adj21,adj31,
 		 adj12,adj22,adj32,
 		 adj13,adj23,adj33: std_logic_vector(7 downto 0);
 		 
 signal det: std_logic_vector(7 downto 0);
 
-signal temp_det: std_logic_vector(7 downto 0);
-
 signal inv_det: std_logic_vector(3 downto 0);
+signal temp_inv_det: std_logic_vector(3 downto 0);
 
 signal temp_dk11,temp_dk12,temp_dk13,
 		 temp_dk21,temp_dk22,temp_dk23,
 		 temp_dk31,temp_dk32,temp_dk33: std_logic_vector(7 downto 0);
 		 
---type STATE_TYPE is (s0,s1,s2,s3);
-
+--type STATE_TYPE is (s0,s1,s2,s3,s4);
 --signal state: STATE_TYPE;
 
-begin
-
-------------------cofactors computation------------------
-mult1_cof11 <= temp_ek22*temp_ek33;
-mult1_cof12 <= temp_ek23*temp_ek31;
-mult1_cof13 <= temp_ek21*temp_ek32;
-mult1_cof21 <= temp_ek13*temp_ek32;
-mult1_cof22 <= temp_ek11*temp_ek33;
-mult1_cof23 <= temp_ek12*temp_ek31;
-mult1_cof31 <= temp_ek12*temp_ek23;
-mult1_cof32 <= temp_ek13*temp_ek21;
-mult1_cof33 <= temp_ek11*temp_ek22;
-
-mult2_cof11 <= temp_ek23*temp_ek32;
-mult2_cof12 <= temp_ek21*temp_ek33;
-mult2_cof13 <= temp_ek22*temp_ek31;
-mult2_cof21 <= temp_ek12*temp_ek33;
-mult2_cof22 <= temp_ek13*temp_ek31;
-mult2_cof23 <= temp_ek11*temp_ek32;
-mult2_cof31 <= temp_ek22*temp_ek13;
-mult2_cof32 <= temp_ek11*temp_ek23;
-mult2_cof33 <= temp_ek12*temp_ek21;
-
-temp_cof11 <= mult1_cof11 - mult2_cof11;
-temp_cof12 <= mult1_cof12 - mult2_cof12;
-temp_cof13 <= mult1_cof13 - mult2_cof13;
-temp_cof21 <= mult1_cof21 - mult2_cof21;
-temp_cof22 <= mult1_cof22 - mult2_cof22;
-temp_cof23 <= mult1_cof23 - mult2_cof23;
-temp_cof31 <= mult1_cof31 - mult2_cof31;
-temp_cof32 <= mult1_cof32 - mult2_cof32;
-temp_cof33 <= mult1_cof33 - mult2_cof33;
-
-------------------determinant computation-----------------
-temp_det <= (temp_ek11*cof11(3 downto 0)) + (temp_ek12*cof12(3 downto 0)) + (temp_ek13*cof13(3 downto 0));
-
-mult_inv_det : lpm_rom --ROM for determinants multiplicative inverses
-
-GENERIC MAP(
-
-lpm_widthad => 4, -- sets the width of the ROM address bus
-lpm_numwords => 16, -- sets the words stored in the ROM
-lpm_outdata => "UNREGISTERED", -- no register on the output
-lpm_address_control => "REGISTERED", -- register on the input
-lpm_file => "mult_inv_16.mif", -- the ascii file containing the ROM data
-lpm_width => 4) -- the width of the word stored in each ROM location
-
-PORT MAP(inclock => clk, address => det(3 downto 0), q => inv_det);
-
-
-------------------descryption key computation-------------
-
-temp_dk11 <= adj11(3 downto 0) * inv_det;
-temp_dk12 <= adj12(3 downto 0) * inv_det;
-temp_dk13 <= adj13(3 downto 0) * inv_det;
-temp_dk21 <= adj21(3 downto 0) * inv_det;
-temp_dk22 <= adj22(3 downto 0) * inv_det;
-temp_dk23 <= adj23(3 downto 0) * inv_det;
-temp_dk31 <= adj31(3 downto 0) * inv_det;
-temp_dk32 <= adj32(3 downto 0) * inv_det;
-temp_dk33 <= adj33(3 downto 0) * inv_det;
-
--------------------updating cofactor, adjacent and output signals on clock rising edge----------------	 
-
-process(clk) 
+signal i : integer := 0;
 
 begin
-
-if (clk'EVENT AND clk = '1') then 
-
-	--case state is
-		
-		--when s0=>
-		
 		temp_ek11 <= ek11;
 		temp_ek12 <= ek12;
 		temp_ek13 <= ek13;
@@ -143,42 +66,6 @@ if (clk'EVENT AND clk = '1') then
 		temp_ek31 <= ek31;
 		temp_ek32 <= ek32;
 		temp_ek33 <= ek33;
-			
-		
-		--state <= s1;
-		
-		--when s1=>
-		
-		cof11 <= temp_cof11;
-		cof12 <= temp_cof12;
-		cof13 <= temp_cof13;
-		cof21 <= temp_cof21;
-		cof22 <= temp_cof22;
-		cof23 <= temp_cof23;
-		cof31 <= temp_cof31;
-		cof32 <= temp_cof32;
-		cof33 <= temp_cof33;
-		
-		--state <= s2;
-		
-		--when s2=>
-				
-		adj11 <= cof11;
-		adj21 <= cof12;
-		adj31 <= cof13;
-		adj12 <= cof21;
-		adj22 <= cof22;
-		adj32 <= cof23;
-		adj13 <= cof31;
-		adj23 <= cof32;
-		adj33 <= cof33;
-		
-		det <= temp_det;
-		
-		
-		--state <= s3;
-		
-		--when s3=>
 		
 		dk11 <= temp_dk11(3 downto 0); 
 		dk12 <= temp_dk12(3 downto 0);
@@ -190,10 +77,111 @@ if (clk'EVENT AND clk = '1') then
 		dk32 <= temp_dk32(3 downto 0); 
 		dk33 <= temp_dk33(3 downto 0); 
 		
+mult_inv_det : lpm_rom --ROM for determinants multiplicative inverses
+
+GENERIC MAP(
+
+lpm_widthad => 4, -- sets the width of the ROM address bus
+lpm_numwords => 16, -- sets the words stored in the ROM
+lpm_outdata => "UNREGISTERED", -- no register on the output
+lpm_address_control => "REGISTERED", -- register on the input
+lpm_file => "mult_inv_16.mif", -- the ascii file containing the ROM data
+lpm_width => 4) -- the width of the word stored in each ROM location
+
+PORT MAP(inclock => clk, address => det(3 downto 0), q => temp_inv_det);
+
+inv_det <= temp_inv_det;
+
+
+process(clk) 
+
+begin
+
+if (clk'EVENT AND clk = '1') then 
+
+	--case state is
+	for i in 0 to 4 loop
+		case i is
+		
+		when 0=>
+		
+		mult1_cof11 <= temp_ek22*temp_ek33;
+		mult1_cof12 <= temp_ek23*temp_ek31;
+		mult1_cof13 <= temp_ek21*temp_ek32;
+		mult1_cof21 <= temp_ek13*temp_ek32;
+		mult1_cof22 <= temp_ek11*temp_ek33;
+		mult1_cof23 <= temp_ek12*temp_ek31;
+		mult1_cof31 <= temp_ek12*temp_ek23;
+		mult1_cof32 <= temp_ek13*temp_ek21;
+		mult1_cof33 <= temp_ek11*temp_ek22;
+
+		mult2_cof11 <= temp_ek23*temp_ek32;
+		mult2_cof12 <= temp_ek21*temp_ek33;
+		mult2_cof13 <= temp_ek22*temp_ek31;
+		mult2_cof21 <= temp_ek12*temp_ek33;
+		mult2_cof22 <= temp_ek13*temp_ek31;
+		mult2_cof23 <= temp_ek11*temp_ek32;
+		mult2_cof31 <= temp_ek22*temp_ek13;
+		mult2_cof32 <= temp_ek11*temp_ek23;
+		mult2_cof33 <= temp_ek12*temp_ek21;
+	
+		--state <= s1;
+		
+		when 1=>
+		------------------cofactors computation------------------
+
+		cof11 <= mult1_cof11 - mult2_cof11;
+		cof12 <= mult1_cof12 - mult2_cof12;
+		cof13 <= mult1_cof13 - mult2_cof13;
+		cof21 <= mult1_cof21 - mult2_cof21;
+		cof22 <= mult1_cof22 - mult2_cof22;
+		cof23 <= mult1_cof23 - mult2_cof23;
+		cof31 <= mult1_cof31 - mult2_cof31;
+		cof32 <= mult1_cof32 - mult2_cof32;
+		cof33 <= mult1_cof33 - mult2_cof33;
+		
+		--state <= s2;
+		
+		when 2=>
+		
+		------------------determinant computation-----------------
+		det <= (temp_ek11*cof11(3 downto 0)) + (temp_ek12*cof12(3 downto 0)) + (temp_ek13*cof13(3 downto 0));
+		
+		--state <= s3;
+		
+		when 3=>
+				
+		adj11 <= cof11;
+		adj21 <= cof12;
+		adj31 <= cof13;
+		adj12 <= cof21;
+		adj22 <= cof22;
+		adj32 <= cof23;
+		adj13 <= cof31;
+		adj23 <= cof32;
+		adj33 <= cof33;
+		
+		--state <= s4;
+		
+		------------------descryption key computation-------------
+		when 4=>
+		
+		temp_dk11 <= adj11(3 downto 0) * inv_det;
+		temp_dk12 <= adj12(3 downto 0) * inv_det;
+		temp_dk13 <= adj13(3 downto 0) * inv_det;
+		temp_dk21 <= adj21(3 downto 0) * inv_det;
+		temp_dk22 <= adj22(3 downto 0) * inv_det;
+		temp_dk23 <= adj23(3 downto 0) * inv_det;
+		temp_dk31 <= adj31(3 downto 0) * inv_det;
+		temp_dk32 <= adj32(3 downto 0) * inv_det;
+		temp_dk33 <= adj33(3 downto 0) * inv_det;
+
+		
+		
 		--state <= s0;
 		
-	--end case;
-
+	end case;
+end loop;
 
 end if;
 

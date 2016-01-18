@@ -943,6 +943,196 @@ SIGNAL("dk33[0]")
 	PARENT = "dk33";
 }
 
+SIGNAL("det")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 8;
+	LSB_INDEX = 0;
+	DIRECTION = REGISTERED;
+	PARENT = "";
+}
+
+SIGNAL("det[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "det";
+}
+
+SIGNAL("det[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "det";
+}
+
+SIGNAL("det[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "det";
+}
+
+SIGNAL("det[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "det";
+}
+
+SIGNAL("det[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "det";
+}
+
+SIGNAL("det[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "det";
+}
+
+SIGNAL("det[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "det";
+}
+
+SIGNAL("det[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "det";
+}
+
+SIGNAL("inv_det")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 4;
+	LSB_INDEX = 0;
+	DIRECTION = BURIED;
+	PARENT = "";
+}
+
+SIGNAL("inv_det[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "inv_det";
+}
+
+SIGNAL("inv_det[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "inv_det";
+}
+
+SIGNAL("inv_det[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "inv_det";
+}
+
+SIGNAL("inv_det[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "inv_det";
+}
+
+SIGNAL("lpm_rom:mult_inv_det|address")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 4;
+	LSB_INDEX = 0;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("lpm_rom:mult_inv_det|address[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "lpm_rom:mult_inv_det|address";
+}
+
+SIGNAL("lpm_rom:mult_inv_det|address[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "lpm_rom:mult_inv_det|address";
+}
+
+SIGNAL("lpm_rom:mult_inv_det|address[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "lpm_rom:mult_inv_det|address";
+}
+
+SIGNAL("lpm_rom:mult_inv_det|address[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "lpm_rom:mult_inv_det|address";
+}
+
 TRANSITION_LIST("clk")
 {
 	NODE
@@ -1819,6 +2009,150 @@ TRANSITION_LIST("dk33[0]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 8000.0;
+	}
+}
+
+TRANSITION_LIST("det[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 8000.0;
+	}
+}
+
+TRANSITION_LIST("det[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 8000.0;
+	}
+}
+
+TRANSITION_LIST("det[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 8000.0;
+	}
+}
+
+TRANSITION_LIST("det[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 8000.0;
+	}
+}
+
+TRANSITION_LIST("det[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 8000.0;
+	}
+}
+
+TRANSITION_LIST("det[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 8000.0;
+	}
+}
+
+TRANSITION_LIST("det[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 8000.0;
+	}
+}
+
+TRANSITION_LIST("det[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 8000.0;
+	}
+}
+
+TRANSITION_LIST("inv_det[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 8000.0;
+	}
+}
+
+TRANSITION_LIST("inv_det[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 8000.0;
+	}
+}
+
+TRANSITION_LIST("inv_det[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 8000.0;
+	}
+}
+
+TRANSITION_LIST("inv_det[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 8000.0;
+	}
+}
+
+TRANSITION_LIST("lpm_rom:mult_inv_det|address[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 8000.0;
+	}
+}
+
+TRANSITION_LIST("lpm_rom:mult_inv_det|address[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 8000.0;
+	}
+}
+
+TRANSITION_LIST("lpm_rom:mult_inv_det|address[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 8000.0;
+	}
+}
+
+TRANSITION_LIST("lpm_rom:mult_inv_det|address[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 8000.0;
 	}
 }
 
@@ -2729,6 +3063,196 @@ DISPLAY_LINE
 	TREE_INDEX = 90;
 	TREE_LEVEL = 1;
 	PARENT = 86;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "det";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Hexadecimal;
+	TREE_INDEX = 91;
+	TREE_LEVEL = 0;
+	CHILDREN = 92, 93, 94, 95, 96, 97, 98, 99;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "det[7]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Hexadecimal;
+	TREE_INDEX = 92;
+	TREE_LEVEL = 1;
+	PARENT = 91;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "det[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Hexadecimal;
+	TREE_INDEX = 93;
+	TREE_LEVEL = 1;
+	PARENT = 91;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "det[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Hexadecimal;
+	TREE_INDEX = 94;
+	TREE_LEVEL = 1;
+	PARENT = 91;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "det[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Hexadecimal;
+	TREE_INDEX = 95;
+	TREE_LEVEL = 1;
+	PARENT = 91;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "det[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Hexadecimal;
+	TREE_INDEX = 96;
+	TREE_LEVEL = 1;
+	PARENT = 91;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "det[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Hexadecimal;
+	TREE_INDEX = 97;
+	TREE_LEVEL = 1;
+	PARENT = 91;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "det[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Hexadecimal;
+	TREE_INDEX = 98;
+	TREE_LEVEL = 1;
+	PARENT = 91;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "det[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Hexadecimal;
+	TREE_INDEX = 99;
+	TREE_LEVEL = 1;
+	PARENT = 91;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "inv_det";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Hexadecimal;
+	TREE_INDEX = 100;
+	TREE_LEVEL = 0;
+	CHILDREN = 101, 102, 103, 104;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "inv_det[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Hexadecimal;
+	TREE_INDEX = 101;
+	TREE_LEVEL = 1;
+	PARENT = 100;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "inv_det[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Hexadecimal;
+	TREE_INDEX = 102;
+	TREE_LEVEL = 1;
+	PARENT = 100;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "inv_det[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Hexadecimal;
+	TREE_INDEX = 103;
+	TREE_LEVEL = 1;
+	PARENT = 100;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "inv_det[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Hexadecimal;
+	TREE_INDEX = 104;
+	TREE_LEVEL = 1;
+	PARENT = 100;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "lpm_rom:mult_inv_det|address";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Hexadecimal;
+	TREE_INDEX = 105;
+	TREE_LEVEL = 0;
+	CHILDREN = 106, 107, 108, 109;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "lpm_rom:mult_inv_det|address[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Hexadecimal;
+	TREE_INDEX = 106;
+	TREE_LEVEL = 1;
+	PARENT = 105;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "lpm_rom:mult_inv_det|address[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Hexadecimal;
+	TREE_INDEX = 107;
+	TREE_LEVEL = 1;
+	PARENT = 105;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "lpm_rom:mult_inv_det|address[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Hexadecimal;
+	TREE_INDEX = 108;
+	TREE_LEVEL = 1;
+	PARENT = 105;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "lpm_rom:mult_inv_det|address[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Hexadecimal;
+	TREE_INDEX = 109;
+	TREE_LEVEL = 1;
+	PARENT = 105;
 }
 
 TIME_BAR
