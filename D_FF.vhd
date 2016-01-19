@@ -5,8 +5,6 @@ entity D_FF is
    port
    (
       clk : in std_logic;
-
-		--enable : in std_logic := '1';
       
       d : in std_logic;
 
@@ -20,9 +18,7 @@ begin
    process (clk) is
    begin
       if rising_edge(clk) then  
-         --if (enable='1') then   
-            q <= d;
-         --end if;
+           q <= d;
       end if;
    end process;
 end behavioral;
