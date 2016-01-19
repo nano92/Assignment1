@@ -24,10 +24,10 @@ begin
 process(clk,load_key)
 	begin
 		
-		if load_key = '0' then
+		if (rising_edge(clk) AND load_key = '0') then
 			state <= idle;
 		
-		elsif (clk'EVENT AND clk = '1' AND load_key = '1') then -- rising_edge(clk) AND load_key = '1'
+		elsif (rising_edge(clk) AND load_key = '1') then --  clk'EVENT AND clk = '1' AND load_key = '1'
 			case state is
 				when idle=>
 				

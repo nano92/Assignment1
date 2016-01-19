@@ -1,10 +1,10 @@
-onerror {exit -code 1}
+onerror {quit -f}
 vlib work
 vlog -work work Hill_Cipher_A1.vo
-vlog -work work Multiplexer.vwf.vt
-vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.Multiplexer_vlg_vec_tst -voptargs="+acc"
+vlog -work work Hill_Cipher_A1.vt
+vsim -novopt -c -t 1ps -L cycloneii_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate work.hill_cipher_vlg_vec_tst
 vcd file -direction Hill_Cipher_A1.msim.vcd
-vcd add -internal Multiplexer_vlg_vec_tst/*
-vcd add -internal Multiplexer_vlg_vec_tst/i1/*
+vcd add -internal hill_cipher_vlg_vec_tst/*
+vcd add -internal hill_cipher_vlg_vec_tst/i1/*
+add wave /*
 run -all
-quit -f

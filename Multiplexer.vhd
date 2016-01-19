@@ -13,6 +13,8 @@ port( k11,k12,k13,
 		
 		sel: 						in std_logic;
 		
+		clk:						in std_logic;
+		
 		out_key11,out_key12,
 		out_key13,out_key21,
 		out_key22,out_key23,
@@ -25,7 +27,7 @@ architecture behavior of Multiplexer is
 
 begin
 
-	process(sel)
+	process(clk,sel)
 		begin
 			case sel is
 				

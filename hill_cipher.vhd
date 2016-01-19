@@ -58,6 +58,8 @@ port( k11,k12,k13,
 		
 		sel: 						in std_logic;
 		
+		clk:						in std_logic;
+		
 		out_key11,out_key12,
 		out_key13,out_key21,
 		out_key22,out_key23,
@@ -86,7 +88,7 @@ port
    (
       clk : in std_logic;
 
-		enable : in std_logic := '1';
+		--enable : in std_logic := '1';
       
       d : in std_logic;
 
@@ -198,6 +200,8 @@ port map(
 				dk33=>temp_dk33,
 				
 				sel=>reg_encrypt,
+				
+				clk=>clk,
 		
 				out_key11=>temp_out_key11,
 				out_key12=>temp_out_key12,
