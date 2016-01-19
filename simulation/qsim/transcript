@@ -2,45 +2,37 @@
 # ** Warning: (vlib-34) Library already exists at "work".
 # 
 # Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
-# Start time: 23:14:51 on Jan 17,2016
+# Start time: 21:42:27 on Jan 18,2016
 # vlog -work work Hill_Cipher_A1.vo 
-# -- Compiling module key_inverter
+# -- Compiling module Multiplexer
 # 
 # Top level modules:
-# 	key_inverter
-# End time: 23:14:52 on Jan 17,2016, Elapsed time: 0:00:01
+# 	Multiplexer
+# End time: 21:42:27 on Jan 18,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
-# Start time: 23:14:52 on Jan 17,2016
-# vlog -work work key_inverter.vwf.vt 
-# -- Compiling module key_inverter_vlg_vec_tst
+# Start time: 21:42:27 on Jan 18,2016
+# vlog -work work Multiplexer.vwf.vt 
+# -- Compiling module Multiplexer_vlg_vec_tst
 # 
 # Top level modules:
-# 	key_inverter_vlg_vec_tst
-# End time: 23:14:52 on Jan 17,2016, Elapsed time: 0:00:00
+# 	Multiplexer_vlg_vec_tst
+# End time: 21:42:27 on Jan 18,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.key_inverter_vlg_vec_tst -voptargs=""+acc"" 
-# Start time: 23:14:52 on Jan 17,2016
-# Loading work.key_inverter_vlg_vec_tst
-# Loading work.key_inverter
+# vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.Multiplexer_vlg_vec_tst -voptargs=""+acc"" 
+# Start time: 21:42:28 on Jan 18,2016
+# Loading work.Multiplexer_vlg_vec_tst
+# Loading work.Multiplexer
 # Loading cycloneive_ver.cycloneive_io_obuf
 # Loading cycloneive_ver.cycloneive_io_ibuf
-# Loading cycloneive_ver.cycloneive_clkctrl
-# Loading cycloneive_ver.cycloneive_mux41
-# Loading cycloneive_ver.cycloneive_ena_reg
 # Loading cycloneive_ver.cycloneive_lcell_comb
-# Loading altera_ver.dffeas
-# Loading cycloneive_ver.cycloneive_ram_block
-# Loading cycloneive_ver.cycloneive_ram_register
-# Loading cycloneive_ver.cycloneive_ram_pulse_generator
 # SDF 10.4b Compiler 2015.05 May 27 2015
 # 
 # Loading instances from Hill_Cipher_A1_v.sdo
-# Loading altera_ver.PRIM_GDFF_LOW
 # Loading timing data from Hill_Cipher_A1_v.sdo
 # ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
-#    Time: 0 ps  Iteration: 0  Instance: /key_inverter_vlg_vec_tst File: key_inverter.vwf.vt
-# ** Note: $finish    : key_inverter.vwf.vt(79)
-#    Time: 8 us  Iteration: 0  Instance: /key_inverter_vlg_vec_tst
-# End time: 23:14:52 on Jan 17,2016, Elapsed time: 0:00:00
+#    Time: 0 ps  Iteration: 0  Instance: /Multiplexer_vlg_vec_tst File: Multiplexer.vwf.vt
+# ** Note: $finish    : Multiplexer.vwf.vt(97)
+#    Time: 1 us  Iteration: 0  Instance: /Multiplexer_vlg_vec_tst
+# End time: 21:42:28 on Jan 18,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0

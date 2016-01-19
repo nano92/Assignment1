@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE auto
-set_global_assignment -name TOP_LEVEL_ENTITY key_inverter
+set_global_assignment -name TOP_LEVEL_ENTITY hill_cipher
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "13.0 SP1"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "12:41:28  JANUARY 07, 2016"
 set_global_assignment -name LAST_QUARTUS_VERSION 15.1.0
@@ -53,6 +53,10 @@ set_global_assignment -name VHDL_FILE key_loader.vhd
 set_global_assignment -name VHDL_FILE struct_key_loader.vhd
 set_global_assignment -name VHDL_FILE key_inverter.vhd
 set_global_assignment -name VECTOR_WAVEFORM_FILE key_inverter.vwf
+set_global_assignment -name VHDL_FILE Multiplexer.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE Multiplexer.vwf
+set_global_assignment -name VHDL_FILE hill_cipher.vhd
+set_global_assignment -name VHDL_FILE D_FF.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
