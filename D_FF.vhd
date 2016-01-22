@@ -1,3 +1,10 @@
+----------------------------------------------------------------------
+-- File name: D_FF.vhd
+-- Author: Luis Gallet Zambrano - 260583750
+-- Creation date: 01/19/16
+-- Last revision date: 01/19/16
+-- Description: D-Flip Flop deisigned to latch the encrypt signal. 
+----------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
 

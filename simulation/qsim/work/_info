@@ -8,338 +8,125 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Users/LuisEnrique/nano/ECSE 487/Assignment1/simulation/qsim
-vhill_cipher
-!s108 1453219437.191000
-!s107 Hill_Cipher_A1.vo|
-Z1 !s90 -work|work|Hill_Cipher_A1.vo|
-!i113 1
-Z2 o-work work
-vhill_cipher_vlg_check_tst
-Z3 !s110 1453218633
-!i10b 1
-!s100 hgD`e04BYPaUnKXzVka;V3
-IR]X7H7eSfJX;eEQon3coC0
-Z4 V`JN@9S9cnhjKRR_L]QIcM3
-Z5 dP:/CompArchLab/Assignment1/simulation/qsim
-Z6 w1453218624
-Z7 8hill_cipher.vwf.vt
-Z8 Fhill_cipher.vwf.vt
-L0 68
-Z9 OV;L;10.3d;59
-r1
-!s85 0
-31
-Z10 !s108 1453218633.688000
-Z11 !s107 hill_cipher.vwf.vt|
-Z12 !s90 -work|work|hill_cipher.vwf.vt|
-!i113 1
-R2
-vhill_cipher_vlg_sample_tst
-!s108 1453218979.097000
-R11
-R12
-!i113 1
-R2
-R0
-vhill_cipher_vlg_vec_tst
-R3
-!i10b 1
-!s100 VA@B8CV][6BFM`S8V;RQd3
-IYCU0T9bQkjjeNfJAMOX<Q3
-R4
-R5
-R6
-R7
-R8
-L0 388
-R9
-r1
-!s85 0
-31
-R10
-R11
-R12
-!i113 1
-R2
 vkey_inverter
-Z13 !s110 1453090492
+Z1 !s110 1453425041
 !i10b 1
-!s100 ZL]<Wi:4CGWU6NE?SlZho3
-I>b<G0@<IX4WG1jOO5_0532
-Z14 VDg1SIo80bB@j0V0VzS_@n1
+!s100 R9o85_b7Nl_zRLobOc^UY2
+I[Vl>=o3E<;GRc[[jRd40Q0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1453090490
-Z15 8Hill_Cipher_A1.vo
-Z16 FHill_Cipher_A1.vo
-Z17 L0 32
-Z18 OV;L;10.4b;61
+w1453425040
+Z3 8Hill_Cipher_A1.vo
+Z4 FHill_Cipher_A1.vo
+Z5 L0 32
+Z6 OV;L;10.4b;61
 r1
 !s85 0
 31
-!s108 1453090491.000000
-!s107 Hill_Cipher_A1.vo|
-R1
+Z7 !s108 1453425041.000000
+Z8 !s107 Hill_Cipher_A1.vo|
+Z9 !s90 -work|work|Hill_Cipher_A1.vo|
 !i113 1
-R2
-vkey_inverter_vlg_check_tst
-Z19 !s110 1452886276
-!i10b 1
-!s100 EK8SE``_BX1oXedVR6WOB3
-I23NLDUOl2@jnb2KV`=?kA2
-R4
-R5
-Z20 w1452886260
-Z21 8key_inverter.vwf.vt
-Z22 Fkey_inverter.vwf.vt
-L0 76
-R9
-r1
-!s85 0
-31
-Z23 !s108 1452886275.790000
-Z24 !s107 key_inverter.vwf.vt|
-Z25 !s90 -work|work|key_inverter.vwf.vt|
-!i113 1
-R2
-vkey_inverter_vlg_sample_tst
-R19
-!i10b 1
-!s100 ]Vf75adcWJO9Q2Z6]IM=V3
-IW;lzzizEA_ZohN;8QXXCB2
-R4
-R5
-R20
-R21
-R22
-Z26 L0 30
-R9
-r1
-!s85 0
-31
-R23
-R24
-R25
-!i113 1
-R2
+Z10 o-work work
 vkey_inverter_vlg_vec_tst
-R13
+R1
 !i10b 1
 !s100 k0C^l;Ia`C<RK;QMdfQM_1
 I[OF7:jSdV^T?TGA?iDAcE0
-R14
+R2
 R0
-w1453090485
-R21
-R22
-R26
-R18
+w1453425035
+8key_inverter.vwf.vt
+Fkey_inverter.vwf.vt
+Z11 L0 30
+R6
 r1
 !s85 0
 31
-!s108 1453090492.000000
-R24
-R25
+R7
+!s107 key_inverter.vwf.vt|
+!s90 -work|work|key_inverter.vwf.vt|
 !i113 1
-R2
-vkey_loader
-Z27 !s110 1452707745
-!i10b 1
-!s100 XK>UgaHHm[I@;>X[75g=^2
-IAoGQzWOUE1B^BlSdV::BW2
-R14
-R0
-w1452707743
-R15
-R16
-R17
-R18
-r1
-!s85 0
-31
-Z28 !s108 1452707745.000000
-!s107 Hill_Cipher_A1.vo|
-R1
-!i113 1
-R2
-vkey_loader_vlg_vec_tst
-R27
-!i10b 1
-!s100 lTlWkJ4nHCFN[I7cn@kEa2
-Iz5]PD]h0Lz>?Di>o<mS=l0
-R14
-R0
-w1452707739
-Z29 8key_loader.vwf.vt
-Z30 Fkey_loader.vwf.vt
-R26
-R18
-r1
-!s85 0
-31
-R28
-Z31 !s107 key_loader.vwf.vt|
-Z32 !s90 -work|work|key_loader.vwf.vt|
-!i113 1
-R2
-vmatrix_multi
-Z33 !s110 1452791074
-!i10b 1
-!s100 8Z88il4J^C@g1MQOP<8@k1
-IPI7`WO5@ifFedF`AY[R:01
-R14
-R0
-w1452791072
-R15
-R16
-R17
-R18
-r1
-!s85 0
-31
-Z34 !s108 1452791074.000000
-!s107 Hill_Cipher_A1.vo|
-R1
-!i113 1
-R2
-vmatrix_multi_vlg_vec_tst
-R33
-!i10b 1
-!s100 GC6Dgl6LLHY;OD=c:?LzF0
-IQeemK_8EW@=V<Al?k5lEV1
-R14
-R0
-w1452791068
-R21
-R22
-R26
-R18
-r1
-!s85 0
-31
-R34
-R24
-R25
-!i113 1
-R2
+R10
 vMultiplexer
-Z35 !s110 1453171347
+Z12 !s110 1453403492
 !i10b 1
 !s100 T[PjE0jZh7o?AI6;C8Rzf0
 IKC7@g`^CFT[lBX55U9S@G3
-R14
+R2
 R0
-w1453171345
-R15
-R16
-R17
-R18
+w1453403490
+R3
+R4
+R5
+R6
 r1
 !s85 0
 31
-Z36 !s108 1453171347.000000
-!s107 Hill_Cipher_A1.vo|
-R1
+!s108 1453403491.000000
+R8
+R9
 !i113 1
-R2
+R10
 n@multiplexer
 vMultiplexer_vlg_vec_tst
-R35
+R12
 !i10b 1
-!s100 JFoU7a<6kKMQ[O;UcbzIK1
-INU?6zRn2cmGF32W>i8HW20
-R14
+!s100 KDHUJ:foYV>:PgYW33U<E2
+Ie[ZUj9>I1HmS=`WYE62F>2
+R2
 R0
-w1453171340
+w1453403485
 8Multiplexer.vwf.vt
 FMultiplexer.vwf.vt
-R26
-R18
+R11
+R6
 r1
 !s85 0
 31
-R36
+!s108 1453403492.000000
 !s107 Multiplexer.vwf.vt|
 !s90 -work|work|Multiplexer.vwf.vt|
 !i113 1
-R2
+R10
 n@multiplexer_vlg_vec_tst
 vstruct_key_loader
-!s110 1452711426
+Z13 !s110 1453402792
 !i10b 1
 !s100 WRKafHYR`_VzngY^^;B=;2
 I7ioQ_J>z9kFA^<h0WhfKl0
-R14
+R2
 R0
-w1452711425
-R15
-R16
-R17
-R18
+w1453402788
+R3
+R4
+R5
+R6
 r1
 !s85 0
 31
-!s108 1452711426.000000
-!s107 Hill_Cipher_A1.vo|
-R1
+Z14 !s108 1453402792.000000
+R8
+R9
 !i113 1
-R2
+R10
 vstruct_key_loader_vlg_vec_tst
-!s110 1452711427
+R13
 !i10b 1
 !s100 m6<cLo1Q8`;`14LL6N5NP1
 I?fP<L6I]IGB;B5B2>eW2z2
-R14
+R2
 R0
-w1452711421
-R29
-R30
-R26
-R18
+w1453402783
+8key_loader.vwf.vt
+Fkey_loader.vwf.vt
+R11
+R6
 r1
 !s85 0
 31
-!s108 1452711427.000000
-R31
-R32
-!i113 1
-R2
-vstruct_matrix_multi
-Z37 !s110 1452624452
-!i10b 1
-!s100 4CR^mnBDLookTKeeUAbQ51
-I>MIDDMJabnG?fN;aCZDS20
 R14
-R0
-w1452624451
-R15
-R16
-R17
-R18
-r1
-!s85 0
-31
-Z38 !s108 1452624452.000000
-!s107 Hill_Cipher_A1.vo|
-R1
+!s107 key_loader.vwf.vt|
+!s90 -work|work|key_loader.vwf.vt|
 !i113 1
-R2
-vstruct_matrix_multi_vlg_vec_tst
-R37
-!i10b 1
-!s100 83CDYDfjcffb=G<51eWmC2
-IY5jA_`?R_<FW[^lR1>[o`3
-R14
-R0
-w1452624446
-8matrix_multiplier.vwf.vt
-Fmatrix_multiplier.vwf.vt
-R26
-R18
-r1
-!s85 0
-31
-R38
-!s107 matrix_multiplier.vwf.vt|
-!s90 -work|work|matrix_multiplier.vwf.vt|
-!i113 1
-R2
+R10

@@ -1,3 +1,12 @@
+----------------------------------------------------------------------
+-- File name: struct_matrix_multi.vhd
+-- Author: Luis Gallet Zambrano - 260583750
+-- Creation date: 01/12/16
+-- Last revision date: 01/12/16
+ 
+-- Description: Use Flip-Flops to latch the inputs and also to write
+-- in the outputs. Uses 3 matrix_multi_sub modules; one for each output.
+----------------------------------------------------------------------
 library altera_mf;
 library lpm;
 library ieee;

@@ -1,3 +1,15 @@
+----------------------------------------------------------------------
+-- File name: hill_cipher.vhd
+-- Author: Luis Gallet Zambrano - 260583750
+-- Creation date: 01/19/16
+-- Last revision date: 01/20/16
+ 
+-- Description: The implementation follows the design from the 
+-- assignment description. It initialize every module as a component 
+-- and connect their inputs and their outputs. In addition, the encrypt
+-- signal is latched into a register so it can be changed on the risin edged
+-- of the clock.
+----------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
 

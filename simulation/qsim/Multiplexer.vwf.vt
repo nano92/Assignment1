@@ -19,7 +19,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "01/18/2016 21:42:20"
+// Generated on "01/21/2016 14:11:25"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          Multiplexer
 // 
@@ -111,7 +111,6 @@ end
 initial
 begin
 	dk11[3] = 1'b1;
-	dk11[3] = #990000 1'b0;
 end 
 // dk11[ 2 ]
 initial
@@ -122,19 +121,16 @@ end
 initial
 begin
 	dk11[1] = 1'b1;
-	dk11[1] = #990000 1'b0;
 end 
 // dk11[ 0 ]
 initial
 begin
 	dk11[0] = 1'b1;
-	dk11[0] = #990000 1'b0;
 end 
 // dk12[ 3 ]
 initial
 begin
 	dk12[3] = 1'b1;
-	dk12[3] = #990000 1'b0;
 end 
 // dk12[ 2 ]
 initial
@@ -145,19 +141,16 @@ end
 initial
 begin
 	dk12[1] = 1'b1;
-	dk12[1] = #990000 1'b0;
 end 
 // dk12[ 0 ]
 initial
 begin
 	dk12[0] = 1'b1;
-	dk12[0] = #990000 1'b0;
 end 
 // dk13[ 3 ]
 initial
 begin
 	dk13[3] = 1'b1;
-	dk13[3] = #990000 1'b0;
 end 
 // dk13[ 2 ]
 initial
@@ -168,19 +161,16 @@ end
 initial
 begin
 	dk13[1] = 1'b1;
-	dk13[1] = #990000 1'b0;
 end 
 // dk13[ 0 ]
 initial
 begin
 	dk13[0] = 1'b1;
-	dk13[0] = #990000 1'b0;
 end 
 // dk21[ 3 ]
 initial
 begin
 	dk21[3] = 1'b1;
-	dk21[3] = #990000 1'b0;
 end 
 // dk21[ 2 ]
 initial
@@ -191,19 +181,16 @@ end
 initial
 begin
 	dk21[1] = 1'b1;
-	dk21[1] = #990000 1'b0;
 end 
 // dk21[ 0 ]
 initial
 begin
 	dk21[0] = 1'b1;
-	dk21[0] = #990000 1'b0;
 end 
 // dk22[ 3 ]
 initial
 begin
 	dk22[3] = 1'b1;
-	dk22[3] = #990000 1'b0;
 end 
 // dk22[ 2 ]
 initial
@@ -214,19 +201,16 @@ end
 initial
 begin
 	dk22[1] = 1'b1;
-	dk22[1] = #990000 1'b0;
 end 
 // dk22[ 0 ]
 initial
 begin
 	dk22[0] = 1'b1;
-	dk22[0] = #990000 1'b0;
 end 
 // dk23[ 3 ]
 initial
 begin
 	dk23[3] = 1'b1;
-	dk23[3] = #990000 1'b0;
 end 
 // dk23[ 2 ]
 initial
@@ -237,19 +221,16 @@ end
 initial
 begin
 	dk23[1] = 1'b1;
-	dk23[1] = #990000 1'b0;
 end 
 // dk23[ 0 ]
 initial
 begin
 	dk23[0] = 1'b1;
-	dk23[0] = #990000 1'b0;
 end 
 // dk31[ 3 ]
 initial
 begin
 	dk31[3] = 1'b1;
-	dk31[3] = #990000 1'b0;
 end 
 // dk31[ 2 ]
 initial
@@ -260,19 +241,16 @@ end
 initial
 begin
 	dk31[1] = 1'b1;
-	dk31[1] = #990000 1'b0;
 end 
 // dk31[ 0 ]
 initial
 begin
 	dk31[0] = 1'b1;
-	dk31[0] = #990000 1'b0;
 end 
 // dk32[ 3 ]
 initial
 begin
 	dk32[3] = 1'b1;
-	dk32[3] = #990000 1'b0;
 end 
 // dk32[ 2 ]
 initial
@@ -283,19 +261,16 @@ end
 initial
 begin
 	dk32[1] = 1'b1;
-	dk32[1] = #990000 1'b0;
 end 
 // dk32[ 0 ]
 initial
 begin
 	dk32[0] = 1'b1;
-	dk32[0] = #990000 1'b0;
 end 
 // dk33[ 3 ]
 initial
 begin
 	dk33[3] = 1'b1;
-	dk33[3] = #990000 1'b0;
 end 
 // dk33[ 2 ]
 initial
@@ -306,13 +281,11 @@ end
 initial
 begin
 	dk33[1] = 1'b1;
-	dk33[1] = #990000 1'b0;
 end 
 // dk33[ 0 ]
 initial
 begin
 	dk33[0] = 1'b1;
-	dk33[0] = #990000 1'b0;
 end 
 // k11[ 3 ]
 initial

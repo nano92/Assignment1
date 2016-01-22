@@ -1,5 +1,16 @@
+----------------------------------------------------------------------
+-- File name: matrix_multi_sub.vhd
+-- Author: Luis Gallet Zambrano - 260583750
+-- Creation date: 01/11/16
+-- Last revision date: 01/12/16
+ 
+-- Description: Sub module of the structural matrix multiplier 
+-- description. It uses lpm_ADD_SUB and lpm_MULT components 
+-- for each multiplication (3) and for each addition (2), in modulo-16
+----------------------------------------------------------------------
+
 library altera_mf;
-LIBRARY lpm;
+library lpm;
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_arith.all;

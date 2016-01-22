@@ -1,3 +1,13 @@
+----------------------------------------------------------------------
+-- File name: key_loader.vhd
+-- Author: Luis Gallet Zambrano - 260583750
+-- Creation date: 01/13/16
+-- Last revision date: 01/19/16
+ 
+-- Description: It follows the FSM  model on the assignment description.
+-- The FSM has 4 states, the keys ares loaded only when the load_key signal
+-- is high.
+----------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
 
@@ -27,12 +37,10 @@ process(clk,load_key)
 		if (rising_edge(clk) AND load_key = '0') then
 			state <= idle;
 		
-		elsif (rising_edge(clk) AND load_key = '1') then --  clk'EVENT AND clk = '1' AND load_key = '1'
+		elsif (rising_edge(clk) AND load_key = '1') then 
 			case state is
 				when idle=>
-				
-				if(load_key = '1') then
-				
+								
 				k11<= p1;
 				k21<= p2;
 				k31<= p3;
@@ -40,7 +48,6 @@ process(clk,load_key)
 				
 				state <= load_c1;
 				
-				end if;
 				
 				when load_c1=>
 				

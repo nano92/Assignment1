@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Tue Jan 19 11:47:03 2016
-Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+Analysis & Synthesis Status : Successful - Thu Jan 21 20:09:19 2016
+Quartus Prime Version : 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 Revision Name : Hill_Cipher_A1
-Top-level Entity Name : hill_cipher
-Family : Cyclone II
-Total logic elements : 701
-    Total combinational functions : 616
-    Dedicated logic registers : 249
-Total registers : 249
-Total pins : 27
+Top-level Entity Name : key_inverter
+Family : Cyclone IV E
+Total logic elements : 462
+    Total combinational functions : 426
+    Dedicated logic registers : 196
+Total registers : 196
+Total pins : 73
 Total virtual pins : 0
 Total memory bits : 64
 Embedded Multiplier 9-bit elements : 0

@@ -1,3 +1,15 @@
+----------------------------------------------------------------------
+-- File name: Multiplexer.vhd
+-- Author: Luis Gallet Zambrano - 260583750
+-- Creation date: 01/18/16
+-- Last revision date: 01/18/16
+ 
+-- Description: Multiplexer design to choose between the output matrix 
+-- from the key loader module or from the key inverter module. 
+-- Whenever the select signal is high, the encryption key matrix 
+-- selected (key loader) is chosen and when it is low, the decryption key
+-- matrix is chosen. 
+----------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
 

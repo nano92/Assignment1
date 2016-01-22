@@ -1,3 +1,14 @@
+-----------------------------------------------------------
+-- File name: matrix_multi.vhd
+-- Author: Luis Gallet Zambrano - 260583750
+-- Creation date: 01/07/16
+-- Last revision date: 01/11/16
+ 
+-- Description: Modulo-16 multiplication, the inputs are 
+-- latched into internal signal on the rising edge of the 
+-- clock and the output ports are written only on 
+-- the rising edge of the clock.
+-----------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_arith.all;

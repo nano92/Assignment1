@@ -1,3 +1,15 @@
+----------------------------------------------------------------------
+-- File name: struct_key_loader.vhd
+-- Author: Luis Gallet Zambrano - 260583750
+-- Creation date: 01/14/16
+-- Last revision date: 01/15/16
+ 
+-- Description: It follows the structural description presented in the
+-- assignment description. The third columns are loaded first each one
+-- to a Flip-Flip; the output its written to a temporary signal in order 
+-- to be passed on as an input to the next flip-flip. The temp signals
+-- are then written to output signals.
+----------------------------------------------------------------------
 library lpm;
 library ieee;
 use ieee.std_logic_1164.all;

@@ -1,3 +1,15 @@
+----------------------------------------------------------------------
+-- File name: key_inverter.vhd
+-- Author: Luis Gallet Zambrano - 260583750
+-- Creation date: 01/15/16
+-- Last revision date: 01/19/16
+ 
+-- Description: The decrypt operation is sepeareted in four: the cofactors 
+-- computation, the determinant computation, the adjacent matrix computation
+-- and inverted key matrix computation. All the operations were done in modulo-16.
+-- In addition, a lpm_rom module is used to map the multiplicative inverse 
+-- of the determinant.
+----------------------------------------------------------------------
 library ieee;
 library lpm;
 use ieee.std_logic_1164.all;
@@ -43,13 +55,16 @@ signal adj11,adj21,adj31,
 		 adj13,adj23,adj33: std_logic_vector(7 downto 0);
 		 
 signal det: std_logic_vector(7 downto 0);
+signal temp_det1,temp_det2,temp_det3: std_logic_vector(7 downto 0);
 
 signal inv_det: std_logic_vector(3 downto 0);
-signal temp_inv_det: std_logic_vector(3 downto 0);
 
 signal temp_dk11,temp_dk12,temp_dk13,
 		 temp_dk21,temp_dk22,temp_dk23,
 		 temp_dk31,temp_dk32,temp_dk33: std_logic_vector(7 downto 0);
+		 
+signal ek11_2,ek12_2,ek13_2: std_logic_vector(3 downto 0);
+signal cof11_2,cof12_2,cof13_2: std_logic_vector(7 downto 0);
 		 
 --type STATE_TYPE is (s0,s1,s2,s3,s4);
 --signal state: STATE_TYPE;
@@ -88,9 +103,16 @@ lpm_address_control => "REGISTERED", -- register on the input
 lpm_file => "mult_inv_16.mif", -- the ascii file containing the ROM data
 lpm_width => 4) -- the width of the word stored in each ROM location
 
-PORT MAP(inclock => clk, address => det(3 downto 0), q => temp_inv_det);
+PORT MAP(inclock => clk, address => det(3 downto 0), q => inv_det);
 
-inv_det <= temp_inv_det;
+------------Assigned values to intermidiate signal to compute determinant----------------------
+		cof11_2 <= cof11;
+		cof12_2 <= cof12;
+		cof13_2 <= cof13;
+		
+		ek11_2 <= temp_ek11;
+		ek12_2 <= temp_ek12;
+		ek13_2 <= temp_ek13;
 
 
 process(clk) 
@@ -100,10 +122,10 @@ begin
 if (clk'EVENT AND clk = '1') then 
 
 	--case state is
-	for i in 0 to 4 loop
+	for i in 0 to 6 loop
 		case i is
 		
-		when 0=>
+		when 0=>			
 		
 		mult1_cof11 <= temp_ek22*temp_ek33;
 		mult1_cof12 <= temp_ek23*temp_ek31;
@@ -115,6 +137,8 @@ if (clk'EVENT AND clk = '1') then
 		mult1_cof32 <= temp_ek13*temp_ek21;
 		mult1_cof33 <= temp_ek11*temp_ek22;
 
+		when 1=>
+		
 		mult2_cof11 <= temp_ek23*temp_ek32;
 		mult2_cof12 <= temp_ek21*temp_ek33;
 		mult2_cof13 <= temp_ek22*temp_ek31;
@@ -127,7 +151,7 @@ if (clk'EVENT AND clk = '1') then
 	
 		--state <= s1;
 		
-		when 1=>
+		when 2=>
 		------------------cofactors computation------------------
 
 		cof11 <= mult1_cof11 - mult2_cof11;
@@ -140,16 +164,24 @@ if (clk'EVENT AND clk = '1') then
 		cof32 <= mult1_cof32 - mult2_cof32;
 		cof33 <= mult1_cof33 - mult2_cof33;
 		
+		
+		
 		--state <= s2;
 		
-		when 2=>
+		when 3=>
 		
 		------------------determinant computation-----------------
-		det <= (temp_ek11*cof11(3 downto 0)) + (temp_ek12*cof12(3 downto 0)) + (temp_ek13*cof13(3 downto 0));
+		temp_det1 <= (ek11_2*cof11_2(3 downto 0));
+		temp_det2 <= (ek12_2*cof12_2(3 downto 0));
+		temp_det3 <= (ek13_2*cof13_2(3 downto 0));
+		
+		when 4=>
+		
+		det <= temp_det1+temp_det2+temp_det3; 
 		
 		--state <= s3;
 		
-		when 3=>
+		when 5=>
 				
 		adj11 <= cof11;
 		adj21 <= cof12;
@@ -161,10 +193,11 @@ if (clk'EVENT AND clk = '1') then
 		adj23 <= cof32;
 		adj33 <= cof33;
 		
+
 		--state <= s4;
 		
 		------------------descryption key computation-------------
-		when 4=>
+		when 6=>
 		
 		temp_dk11 <= adj11(3 downto 0) * inv_det;
 		temp_dk12 <= adj12(3 downto 0) * inv_det;
