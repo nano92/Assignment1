@@ -1,5 +1,5 @@
 
-State Machine - |key_loader|state
+State Machine - |hill_cipher|key_loader:LOADER|state
 Name state.load_c3 state.load_c2 state.load_c1 state.idle 
 state.idle 0 0 0 0 
 state.load_c1 0 0 1 1 

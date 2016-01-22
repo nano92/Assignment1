@@ -1,6 +1,6 @@
 Flow report for Hill_Cipher_A1
-Thu Jan 21 20:10:40 2016
-Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
+Fri Jan 22 13:48:21 2016
+Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
 
 
 ---------------------
@@ -28,7 +28,7 @@ functions, and any output files from any of the foregoing
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
 to the terms and conditions of the Altera Program License 
-Subscription Agreement, the Altera Quartus Prime License Agreement,
+Subscription Agreement, the Altera Quartus II License Agreement,
 the Altera MegaCore Function License Agreement, or other 
 applicable license agreement, including, without limitation, 
 that your use is for the sole purpose of programming logic 
@@ -41,21 +41,21 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Jan 21 20:10:40 2016       ;
-; Quartus Prime Version              ; 15.1.0 Build 185 10/21/2015 SJ Lite Edition ;
+; Flow Status                        ; Successful - Fri Jan 22 13:48:21 2016       ;
+; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Full Version ;
 ; Revision Name                      ; Hill_Cipher_A1                              ;
-; Top-level Entity Name              ; key_inverter                                ;
+; Top-level Entity Name              ; struct_key_loader                           ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 433 / 6,272 ( 7 % )                         ;
-;     Total combinational functions  ; 426 / 6,272 ( 7 % )                         ;
-;     Dedicated logic registers      ; 196 / 6,272 ( 3 % )                         ;
-; Total registers                    ; 196                                         ;
-; Total pins                         ; 73 / 180 ( 41 % )                           ;
+; Total logic elements               ; 36 / 6,272 ( < 1 % )                        ;
+;     Total combinational functions  ; 0 / 6,272 ( 0 % )                           ;
+;     Dedicated logic registers      ; 36 / 6,272 ( < 1 % )                        ;
+; Total registers                    ; 36                                          ;
+; Total pins                         ; 50 / 92 ( 54 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 64 / 276,480 ( < 1 % )                      ;
+; Total memory bits                  ; 0 / 276,480 ( 0 % )                         ;
 ; Embedded Multiplier 9-bit elements ; 0 / 30 ( 0 % )                              ;
 ; Total PLLs                         ; 0 / 2 ( 0 % )                               ;
-; Device                             ; EP4CE6F17C6                                 ;
+; Device                             ; EP4CE6E22C6                                 ;
 ; Timing Models                      ; Final                                       ;
 +------------------------------------+---------------------------------------------+
 
@@ -65,28 +65,28 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/21/2016 20:09:01 ;
+; Start date & time ; 01/22/2016 13:47:39 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Hill_Cipher_A1      ;
 +-------------------+---------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                    ;
-+------------------------------------------------+---------------------------------------------------+----------------+--------------+----------------+
-; Assignment Name                                ; Value                                             ; Default Value  ; Entity Name  ; Section Id     ;
-+------------------------------------------------+---------------------------------------------------+----------------+--------------+----------------+
-; COMPILER_SIGNATURE_ID                          ; 93383146960456.145342494111152                    ; --             ; --           ; --             ;
-; EDA_OUTPUT_DATA_FORMAT                         ; Verilog Hdl                                       ; --             ; --           ; eda_simulation ;
-; EDA_SIMULATION_TOOL                            ; ModelSim (Verilog)                                ; <None>         ; --           ; --             ;
-; EDA_TIME_SCALE                                 ; 1 ps                                              ; --             ; --           ; eda_simulation ;
-; EDA_USER_COMPILED_SIMULATION_LIBRARY_DIRECTORY ; C:\Users\LuisEnrique\nano\ECSE 487\EDA_sim_output ; --             ; --           ; eda_simulation ;
-; PARTITION_COLOR                                ; 16764057                                          ; --             ; key_inverter ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL            ; PLACEMENT_AND_ROUTING                             ; --             ; key_inverter ; Top            ;
-; PARTITION_NETLIST_TYPE                         ; SOURCE                                            ; --             ; key_inverter ; Top            ;
-; PROJECT_OUTPUT_DIRECTORY                       ; output_files                                      ; --             ; --           ; --             ;
-; TOP_LEVEL_ENTITY                               ; key_inverter                                      ; Hill_Cipher_A1 ; --           ; --             ;
-+------------------------------------------------+---------------------------------------------------+----------------+--------------+----------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                         ;
++------------------------------------------------+---------------------------------------------------+----------------+-------------------+----------------+
+; Assignment Name                                ; Value                                             ; Default Value  ; Entity Name       ; Section Id     ;
++------------------------------------------------+---------------------------------------------------+----------------+-------------------+----------------+
+; COMPILER_SIGNATURE_ID                          ; 203178703681782.145348845928896                   ; --             ; --                ; --             ;
+; EDA_OUTPUT_DATA_FORMAT                         ; Verilog Hdl                                       ; --             ; --                ; eda_simulation ;
+; EDA_SIMULATION_TOOL                            ; ModelSim (Verilog)                                ; <None>         ; --                ; --             ;
+; EDA_TIME_SCALE                                 ; 1 ps                                              ; --             ; --                ; eda_simulation ;
+; EDA_USER_COMPILED_SIMULATION_LIBRARY_DIRECTORY ; C:\Users\LuisEnrique\nano\ECSE 487\EDA_sim_output ; --             ; --                ; eda_simulation ;
+; PARTITION_COLOR                                ; 16764057                                          ; --             ; struct_key_loader ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL            ; PLACEMENT_AND_ROUTING                             ; --             ; struct_key_loader ; Top            ;
+; PARTITION_NETLIST_TYPE                         ; SOURCE                                            ; --             ; struct_key_loader ; Top            ;
+; PROJECT_OUTPUT_DIRECTORY                       ; output_files                                      ; --             ; --                ; --             ;
+; TOP_LEVEL_ENTITY                               ; struct_key_loader                                 ; Hill_Cipher_A1 ; --                ; --             ;
++------------------------------------------------+---------------------------------------------------+----------------+-------------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -94,14 +94,12 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:18     ; 1.0                     ; 866 MB              ; 00:00:37                           ;
-; Fitter                    ; 00:00:09     ; 1.0                     ; 1129 MB             ; 00:00:09                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 727 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 803 MB              ; 00:00:03                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 700 MB              ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 681 MB              ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 697 MB              ; 00:00:02                           ;
-; Total                     ; 00:00:34     ; --                      ; --                  ; 00:00:55                           ;
+; Analysis & Synthesis      ; 00:00:13     ; 1.0                     ; 711 MB              ; 00:00:23                           ;
+; Fitter                    ; 00:00:08     ; 1.0                     ; 1410 MB             ; 00:00:04                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 600 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 712 MB              ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 565 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:31     ; --                      ; --                  ; 00:00:31                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -110,13 +108,11 @@ agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; Nano-PC          ; Windows 8 ; 6.2        ; x86_64         ;
-; Fitter                    ; Nano-PC          ; Windows 8 ; 6.2        ; x86_64         ;
-; Assembler                 ; Nano-PC          ; Windows 8 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; Nano-PC          ; Windows 8 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; Nano-PC          ; Windows 8 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; Nano-PC          ; Windows 8 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; Nano-PC          ; Windows 8 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; 156TR4120CA-13   ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; 156TR4120CA-13   ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; 156TR4120CA-13   ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; 156TR4120CA-13   ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer        ; 156TR4120CA-13   ; Windows 7 ; 6.1        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
@@ -128,8 +124,6 @@ quartus_fit --read_settings_files=off --write_settings_files=off Hill_Cipher_A1 
 quartus_asm --read_settings_files=off --write_settings_files=off Hill_Cipher_A1 -c Hill_Cipher_A1
 quartus_sta Hill_Cipher_A1 -c Hill_Cipher_A1
 quartus_eda --read_settings_files=off --write_settings_files=off Hill_Cipher_A1 -c Hill_Cipher_A1
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Hill_Cipher_A1 -c Hill_Cipher_A1 --vector_source="C:/Users/LuisEnrique/nano/ECSE 487/Assignment1/key_inverter.vwf" --testbench_file="C:/Users/LuisEnrique/nano/ECSE 487/Assignment1/simulation/qsim/key_inverter.vwf.vt"
-quartus_eda --write_settings_files=off --functional=off --flatten_buses=off --timescale=1ps --simulation=on --tool=modelsim_oem --format=verilog --output_directory="C:/Users/LuisEnrique/nano/ECSE 487/Assignment1/simulation/qsim/" Hill_Cipher_A1 -c Hill_Cipher_A1
 
 
 
