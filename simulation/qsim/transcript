@@ -1,29 +1,26 @@
 # do Hill_Cipher_A1.do
-# ** Error: (vlib-35) Failed to create directory "work".
+# ** Warning: (vlib-34) Library already exists at "work".
 # 
-# File exists. (errno = EEXIST)
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:01:53 on Jan 22,2016
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 16:02:40 on Jan 24,2016
 # vlog -work work Hill_Cipher_A1.vo 
 # -- Compiling module hill_cipher
 # 
 # Top level modules:
 # 	hill_cipher
-# End time: 13:01:53 on Jan 22,2016, Elapsed time: 0:00:00
+# End time: 16:02:41 on Jan 24,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
-# Start time: 13:01:53 on Jan 22,2016
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 16:02:41 on Jan 24,2016
 # vlog -work work hill_cipher.vwf.vt 
-# -- Compiling module hill_cipher_vlg_sample_tst
-# -- Compiling module hill_cipher_vlg_check_tst
 # -- Compiling module hill_cipher_vlg_vec_tst
 # 
 # Top level modules:
 # 	hill_cipher_vlg_vec_tst
-# End time: 13:01:54 on Jan 22,2016, Elapsed time: 0:00:01
+# End time: 16:02:41 on Jan 24,2016, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim -c -do "Hill_Cipher_A1.do" 
-# Start time: 13:01:54 on Jan 22,2016
+# vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.hill_cipher_vlg_vec_tst -voptargs=""+acc"" 
+# Start time: 16:02:41 on Jan 24,2016
 # Loading work.hill_cipher_vlg_vec_tst
 # Loading work.hill_cipher
 # Loading cycloneive_ver.cycloneive_io_obuf
@@ -36,53 +33,14 @@
 # Loading cycloneive_ver.cycloneive_ram_block
 # Loading cycloneive_ver.cycloneive_ram_register
 # Loading cycloneive_ver.cycloneive_ram_pulse_generator
-# Loading work.hill_cipher_vlg_sample_tst
-# Loading work.hill_cipher_vlg_check_tst
-# SDF 10.3d Compiler 2014.10 Oct  7 2014
+# SDF 10.4b Compiler 2015.05 May 27 2015
 # 
 # Loading instances from Hill_Cipher_A1_v.sdo
 # Loading altera_ver.PRIM_GDFF_LOW
 # Loading timing data from Hill_Cipher_A1_v.sdo
 # ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
 #    Time: 0 ps  Iteration: 0  Instance: /hill_cipher_vlg_vec_tst File: hill_cipher.vwf.vt
-# ERROR! Vector Mismatch for output port c1[2] :: @time = 2000000.000 ps
-#      Expected value = 0000
-#      Real value = 0100
-# ERROR! Vector Mismatch for output port c2[1] :: @time = 2000000.000 ps
-#      Expected value = 0000
-#      Real value = 0010
-# ERROR! Vector Mismatch for output port c3[1] :: @time = 2000000.000 ps
-#      Expected value = 0000
-#      Real value = 1110
-# ERROR! Vector Mismatch for output port c3[2] :: @time = 2000000.000 ps
-#      Expected value = 0000
-#      Real value = 1110
-# ERROR! Vector Mismatch for output port c3[3] :: @time = 2000000.000 ps
-#      Expected value = 0000
-#      Real value = 1110
-# ERROR! Vector Mismatch for output port c1[0] :: @time = 2100000.000 ps
-#      Expected value = 0000
-#      Real value = 1011
-# ERROR! Vector Mismatch for output port c1[1] :: @time = 2100000.000 ps
-#      Expected value = 0000
-#      Real value = 1011
-# ERROR! Vector Mismatch for output port c1[3] :: @time = 2100000.000 ps
-#      Expected value = 0000
-#      Real value = 1011
-# ERROR! Vector Mismatch for output port c2[0] :: @time = 2100000.000 ps
-#      Expected value = 0000
-#      Real value = 1101
-# ERROR! Vector Mismatch for output port c2[2] :: @time = 2100000.000 ps
-#      Expected value = 0000
-#      Real value = 1101
-# ERROR! Vector Mismatch for output port c2[3] :: @time = 2100000.000 ps
-#      Expected value = 0000
-#      Real value = 1101
-# ERROR! Vector Mismatch for output port c3[0] :: @time = 2400000.000 ps
-#      Expected value = 0000
-#      Real value = 0001
-#          12 mismatched vectors : Simulation failed !
-# ** Note: $finish    : hill_cipher.vwf.vt(384)
-#    Time: 5 us  Iteration: 0  Instance: /hill_cipher_vlg_vec_tst/tb_out
-# End time: 13:01:54 on Jan 22,2016, Elapsed time: 0:00:00
+# ** Note: $finish    : hill_cipher.vwf.vt(59)
+#    Time: 5 us  Iteration: 0  Instance: /hill_cipher_vlg_vec_tst
+# End time: 16:02:42 on Jan 24,2016, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0

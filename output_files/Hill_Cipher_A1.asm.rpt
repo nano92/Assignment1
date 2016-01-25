@@ -1,6 +1,6 @@
 Assembler report for Hill_Cipher_A1
-Fri Jan 22 13:48:08 2016
-Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
+Sun Jan 24 16:02:11 2016
+Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
 ---------------------
@@ -10,7 +10,7 @@ Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: P:/CompArchLab/Assignment1/output_files/Hill_Cipher_A1.sof
+  5. Assembler Device Options: C:/Users/LuisEnrique/nano/ECSE 487/Assignment1/output_files/Hill_Cipher_A1.sof
   6. Assembler Messages
 
 
@@ -25,7 +25,7 @@ functions, and any output files from any of the foregoing
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
 to the terms and conditions of the Altera Program License 
-Subscription Agreement, the Altera Quartus II License Agreement,
+Subscription Agreement, the Altera Quartus Prime License Agreement,
 the Altera MegaCore Function License Agreement, or other 
 applicable license agreement, including, without limitation, 
 that your use is for the sole purpose of programming logic 
@@ -38,9 +38,9 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Fri Jan 22 13:48:08 2016 ;
+; Assembler Status      ; Successful - Sun Jan 24 16:02:11 2016 ;
 ; Revision Name         ; Hill_Cipher_A1                        ;
-; Top-level Entity Name ; struct_key_loader                     ;
+; Top-level Entity Name ; hill_cipher                           ;
 ; Family                ; Cyclone IV E                          ;
 ; Device                ; EP4CE6E22C6                           ;
 +-----------------------+---------------------------------------+
@@ -53,40 +53,40 @@ agreement for further details.
 +--------+---------+---------------+
 
 
-+------------------------------------------------------------+
-; Assembler Generated Files                                  ;
-+------------------------------------------------------------+
-; File Name                                                  ;
-+------------------------------------------------------------+
-; P:/CompArchLab/Assignment1/output_files/Hill_Cipher_A1.sof ;
-+------------------------------------------------------------+
++--------------------------------------------------------------------------------+
+; Assembler Generated Files                                                      ;
++--------------------------------------------------------------------------------+
+; File Name                                                                      ;
++--------------------------------------------------------------------------------+
+; C:/Users/LuisEnrique/nano/ECSE 487/Assignment1/output_files/Hill_Cipher_A1.sof ;
++--------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Assembler Device Options: P:/CompArchLab/Assignment1/output_files/Hill_Cipher_A1.sof ;
-+----------------+---------------------------------------------------------------------+
-; Option         ; Setting                                                             ;
-+----------------+---------------------------------------------------------------------+
-; Device         ; EP4CE6E22C6                                                         ;
-; JTAG usercode  ; 0x0009A99F                                                          ;
-; Checksum       ; 0x0009A99F                                                          ;
-+----------------+---------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/LuisEnrique/nano/ECSE 487/Assignment1/output_files/Hill_Cipher_A1.sof ;
++----------------+-----------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                 ;
++----------------+-----------------------------------------------------------------------------------------+
+; Device         ; EP4CE6E22C6                                                                             ;
+; JTAG usercode  ; 0x000EF6A7                                                                              ;
+; Checksum       ; 0x000EF6A7                                                                              ;
++----------------+-----------------------------------------------------------------------------------------+
 
 
 +--------------------+
 ; Assembler Messages ;
 +--------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit Assembler
-    Info: Version 15.0.0 Build 145 04/22/2015 SJ Full Version
-    Info: Processing started: Fri Jan 22 13:48:05 2016
+Info: Running Quartus Prime Assembler
+    Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
+    Info: Processing started: Sun Jan 24 16:02:09 2016
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off Hill_Cipher_A1 -c Hill_Cipher_A1
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
-Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 600 megabytes
-    Info: Processing ended: Fri Jan 22 13:48:08 2016
-    Info: Elapsed time: 00:00:03
+Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 727 megabytes
+    Info: Processing ended: Sun Jan 24 16:02:11 2016
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 

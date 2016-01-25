@@ -4,147 +4,51 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "dk11[0]",
+					"name" : "c1[0]",
 					"strict" : false
 				},
 				{
-					"name" : "dk11[1]",
+					"name" : "c1[1]",
 					"strict" : false
 				},
 				{
-					"name" : "dk11[2]",
+					"name" : "c1[2]",
 					"strict" : false
 				},
 				{
-					"name" : "dk11[3]",
+					"name" : "c1[3]",
 					"strict" : false
 				},
 				{
-					"name" : "dk12[0]",
+					"name" : "c2[0]",
 					"strict" : false
 				},
 				{
-					"name" : "dk12[1]",
+					"name" : "c2[1]",
 					"strict" : false
 				},
 				{
-					"name" : "dk12[2]",
+					"name" : "c2[2]",
 					"strict" : false
 				},
 				{
-					"name" : "dk12[3]",
+					"name" : "c2[3]",
 					"strict" : false
 				},
 				{
-					"name" : "dk13[0]",
+					"name" : "c3[0]",
 					"strict" : false
 				},
 				{
-					"name" : "dk13[1]",
+					"name" : "c3[1]",
 					"strict" : false
 				},
 				{
-					"name" : "dk13[2]",
+					"name" : "c3[2]",
 					"strict" : false
 				},
 				{
-					"name" : "dk13[3]",
-					"strict" : false
-				},
-				{
-					"name" : "dk21[0]",
-					"strict" : false
-				},
-				{
-					"name" : "dk21[1]",
-					"strict" : false
-				},
-				{
-					"name" : "dk21[2]",
-					"strict" : false
-				},
-				{
-					"name" : "dk21[3]",
-					"strict" : false
-				},
-				{
-					"name" : "dk22[0]",
-					"strict" : false
-				},
-				{
-					"name" : "dk22[1]",
-					"strict" : false
-				},
-				{
-					"name" : "dk22[2]",
-					"strict" : false
-				},
-				{
-					"name" : "dk22[3]",
-					"strict" : false
-				},
-				{
-					"name" : "dk23[0]",
-					"strict" : false
-				},
-				{
-					"name" : "dk23[1]",
-					"strict" : false
-				},
-				{
-					"name" : "dk23[2]",
-					"strict" : false
-				},
-				{
-					"name" : "dk23[3]",
-					"strict" : false
-				},
-				{
-					"name" : "dk31[0]",
-					"strict" : false
-				},
-				{
-					"name" : "dk31[1]",
-					"strict" : false
-				},
-				{
-					"name" : "dk31[2]",
-					"strict" : false
-				},
-				{
-					"name" : "dk31[3]",
-					"strict" : false
-				},
-				{
-					"name" : "dk32[0]",
-					"strict" : false
-				},
-				{
-					"name" : "dk32[1]",
-					"strict" : false
-				},
-				{
-					"name" : "dk32[2]",
-					"strict" : false
-				},
-				{
-					"name" : "dk32[3]",
-					"strict" : false
-				},
-				{
-					"name" : "dk33[0]",
-					"strict" : false
-				},
-				{
-					"name" : "dk33[1]",
-					"strict" : false
-				},
-				{
-					"name" : "dk33[2]",
-					"strict" : false
-				},
-				{
-					"name" : "dk33[3]",
+					"name" : "c3[3]",
 					"strict" : false
 				},
 				{
@@ -152,147 +56,59 @@
 					"strict" : false
 				},
 				{
-					"name" : "ek12[0]",
+					"name" : "p3[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ek11[0]",
+					"name" : "load_key",
 					"strict" : false
 				},
 				{
-					"name" : "ek13[0]",
+					"name" : "encrypt",
 					"strict" : false
 				},
 				{
-					"name" : "ek12[1]",
+					"name" : "p1[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ek11[1]",
+					"name" : "p2[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ek13[1]",
+					"name" : "p3[3]",
 					"strict" : false
 				},
 				{
-					"name" : "ek12[2]",
+					"name" : "p3[2]",
 					"strict" : false
 				},
 				{
-					"name" : "ek11[2]",
+					"name" : "p1[3]",
 					"strict" : false
 				},
 				{
-					"name" : "ek13[2]",
+					"name" : "p1[2]",
 					"strict" : false
 				},
 				{
-					"name" : "ek12[3]",
+					"name" : "p2[3]",
 					"strict" : false
 				},
 				{
-					"name" : "ek11[3]",
+					"name" : "p2[2]",
 					"strict" : false
 				},
 				{
-					"name" : "ek13[3]",
+					"name" : "p3[0]",
 					"strict" : false
 				},
 				{
-					"name" : "ek33[1]",
+					"name" : "p1[0]",
 					"strict" : false
 				},
 				{
-					"name" : "ek32[1]",
-					"strict" : false
-				},
-				{
-					"name" : "ek33[3]",
-					"strict" : false
-				},
-				{
-					"name" : "ek33[2]",
-					"strict" : false
-				},
-				{
-					"name" : "ek32[3]",
-					"strict" : false
-				},
-				{
-					"name" : "ek32[2]",
-					"strict" : false
-				},
-				{
-					"name" : "ek23[1]",
-					"strict" : false
-				},
-				{
-					"name" : "ek23[3]",
-					"strict" : false
-				},
-				{
-					"name" : "ek23[2]",
-					"strict" : false
-				},
-				{
-					"name" : "ek31[1]",
-					"strict" : false
-				},
-				{
-					"name" : "ek31[3]",
-					"strict" : false
-				},
-				{
-					"name" : "ek31[2]",
-					"strict" : false
-				},
-				{
-					"name" : "ek21[1]",
-					"strict" : false
-				},
-				{
-					"name" : "ek21[3]",
-					"strict" : false
-				},
-				{
-					"name" : "ek21[2]",
-					"strict" : false
-				},
-				{
-					"name" : "ek22[1]",
-					"strict" : false
-				},
-				{
-					"name" : "ek22[3]",
-					"strict" : false
-				},
-				{
-					"name" : "ek22[2]",
-					"strict" : false
-				},
-				{
-					"name" : "ek33[0]",
-					"strict" : false
-				},
-				{
-					"name" : "ek22[0]",
-					"strict" : false
-				},
-				{
-					"name" : "ek32[0]",
-					"strict" : false
-				},
-				{
-					"name" : "ek23[0]",
-					"strict" : false
-				},
-				{
-					"name" : "ek31[0]",
-					"strict" : false
-				},
-				{
-					"name" : "ek21[0]",
+					"name" : "p2[0]",
 					"strict" : false
 				}
 			]
